@@ -1,17 +1,14 @@
 retry
 =====
 
-.. image:: https://img.shields.io/pypi/dm/retry.svg?maxAge=2592000
-        :target: https://pypi.python.org/pypi/retry/
-
 .. image:: https://img.shields.io/pypi/v/retry.svg?maxAge=2592000
         :target: https://pypi.python.org/pypi/retry/
 
 .. image:: https://img.shields.io/pypi/l/retry.svg?maxAge=2592000
         :target: https://pypi.python.org/pypi/retry/
 
-.. image:: https://travis-ci.com/shizacat/retry.svg?branch=master
-        :target: https://travis-ci.com/shizacat/retry
+.. image:: https://github.com/shizacat/retry/actions/workflows/python_package.yaml/badge.svg
+        :target: https://github.com/shizacat/retry/actions/workflows/python_package.yaml
 
 
 Easy to use retry decorator.
