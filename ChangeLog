@@ -1,6 +1,11 @@
 CHANGES
 =======
 
+1.0.6
+-----
+* Rename library to original name - retry
+
+
 1.0.5
 -----
 * Add version to package

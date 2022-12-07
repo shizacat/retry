@@ -34,7 +34,10 @@ Installation
 
 .. code-block:: bash
 
-    $ pip install retry-sh
+    # latest
+    # $ pip install git+https://github.com/shizacat/retry
+    # fix version
+    $ pip install git+https://github.com/shizacat/retry@1.0.6
 
 
 API
