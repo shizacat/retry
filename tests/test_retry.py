@@ -8,6 +8,15 @@ from retry.api import retry_call
 from retry.api import retry
 
 
+def get_event_loop():
+    try:
+        loop = asyncio.get_running_loop()
+    except RuntimeError:
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+    return loop
+
+
 def test_retry(monkeypatch):
     mock_sleep_time = [0]
 
@@ -188,7 +197,7 @@ def test_call_on_async_def():
             return value
         raise RuntimeError
 
-    loop = asyncio.get_event_loop()
+    loop = get_event_loop()
 
     # === 1
     result = loop.run_until_complete(testf(-1))
