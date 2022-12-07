@@ -1,6 +1,11 @@
 CHANGES
 =======
 
+1.0.5-RC
+-----
+* Add version to package
+
+
 1.0.1
 -----
 * Update setup.cfg
