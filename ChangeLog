@@ -1,6 +1,10 @@
 CHANGES
 =======
 
+1.0.7
+* Add function retry_call_async
+
+
 1.0.6
 -----
 * Rename library to original name - retry

@@ -4,8 +4,7 @@ from unittest.mock import MagicMock, create_autospec
 
 import pytest
 
-from retry.api import retry_call
-from retry.api import retry
+from retry.api import retry, retry_call, retry_call_async
 
 
 def get_event_loop():
@@ -133,6 +132,25 @@ def test_retry_call():
         pass
 
     assert f_mock.call_count == tries
+
+def test_retry_call_async_01():
+    """Call a function"""
+    # Definition
+    hit = [0]
+    async def testf(value=0):
+        hit[0] += 1
+        if value < 0:
+            await asyncio.sleep(0.1)
+            return value
+        raise RuntimeError
+    
+    # Run
+    loop = get_event_loop()
+    result = loop.run_until_complete(
+        retry_call_async(testf, fkwargs={"value": -1}, tries=4, delay=0.01)
+    )
+    assert result == -1
+    assert hit[0] == 1
 
 
 def test_retry_call_2():
